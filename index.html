@@ -8,26 +8,29 @@
     <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="assets/css/style.css">
-      <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
     <div class="container">
+
         <div class="navigation">
-            <ul>
-                <li>
+            <ul class="">
+                <li class="">
                     <a href="#" class="flex">
-                       <span class="icon mt-3.5">
-                         <ion-icon name="document-text-outline" size="" style="font-size: 34px;"></ion-icon>
-                       </span>
-                        <span class="title mt-3 -ml-2">E-Document</span>
+                        <span class="icon mt-3.5">
+                            <ion-icon name="document-text-outline" size="" style="font-size: 34px;"></ion-icon>
+                        </span>
+                        <span class="title mt-3 ml-2">E-Document</span>
                     </a>
                 </li>
 
-                <li class="my-6">
-                    <a href="index.html" class="">
+                <li class="my-6 hovered">
+                    <a href="index.html">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </span>
                         <span class="title">Dashboard</span>
                     </a>
@@ -45,38 +48,30 @@
                 <li class="my-6">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="person-add-outline"></ion-icon>                        
+                            <ion-icon name="person-add-outline"></ion-icon>
                         </span>
                         <span class="title">Tambah Data Pekerja</span>
                     </a>
                 </li>
 
                 <li class="my-6">
-                    <a href="#" >
+                    <a href="#">
                         <span class="icon">
-                            <ion-icon name="print-outline"></ion-icon>                        
+                            <ion-icon name="print-outline"></ion-icon>
                         </span>
                         <span class="title">Print Data Pekerja</span>
                     </a>
                 </li>
 
                 <li class="my-6">
-                    <a href="#" >
+                    <a href="#">
                         <span class="icon">
-                           <ion-icon name="cloud-done-outline"></ion-icon>                        
+                            <ion-icon name="cloud-done-outline"></ion-icon>
                         </span>
                         <span class="title">Cloud Document</span>
                     </a>
                 </li>
 
-                <li class="my-6">
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
             </ul>
         </div>
 
@@ -87,22 +82,341 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
 
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                <div class="user" id="dropdownDefault" data-dropdown-toggle="dropdown">
+                    <img src="assets/imgs/customer03.jpg" alt="">
                 </div>
 
-                <div class="user">
-                    <img src="assets/imgs/customer01.jpg" alt="">
+                <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow"
+                    data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
+                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 509px);">
+                    <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownDefault">
+                        <li>
+                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 text-center font-semibold">Zulham
+                                Abidin</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 px-4 hover:bg-gray-100">Pengaturan</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 px-4 hover:bg-gray-100">Logout</a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
 
             <!-- ======================= Cards ================== -->
-           
-           
-            <div class="cardBox">
+
+
+            <div class="header mx-6">
+                <form class="flex items-center">
+                    <label for="voice-search" class="sr-only">Search</label>
+                    <div class="relative w-full">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input type="text" id="voice-search"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                            placeholder="" required="">
+                        <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button type="submit"
+                        class="inline-flex items-center justify-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-cyan-600 rounded-lg border border-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+                        <svg aria-hidden="true" class="w-5 h-5 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="mx-5 my-5">
+
+                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left text-gray-500 ">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                            <tr>
+                                <th scope="col" class="py-3 px-6">
+                                    Product name
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Color
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Category
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Price
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Category
+                                </th>
+                                <th scope="col" class="py-3 px-12 text-center">
+                                    Action
+                                </th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <th scope="row"
+                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                    Apple MacBook Pro 17"
+                                </th>
+                                <td class="py-4 px-6">
+                                    Sliver
+                                </td>
+                                <td class="py-4 px-6">
+                                    Laptop
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6">
+                                    $2999
+                                </td>
+                                <td class="py-4 px-6 flex">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Hapus</button>
+                                    <a href="" type="button" class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- <div class="cardBox">
                 <div class="card">
                     <div>
                         <div class="numbers">1,504</div>
@@ -146,10 +460,11 @@
                         <ion-icon name="cash-outline"></ion-icon>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
 
             <!-- ================ Order Details List ================= -->
-           
+
         </div>
     </div>
 
@@ -157,6 +472,7 @@
     <script src="assets/js/main.js"></script>
 
     <!-- ====== ionicons ======= -->
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
