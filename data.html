@@ -14,16 +14,17 @@
 </head>
 
 <body>
+    
     <div class="container">
 
         <div class="navigation">
             <ul class="">
                 <li class="">
                     <a href="#" class="flex">
-                        <span class="icon mt-3.5">
-                            <ion-icon name="document-text-outline" size="" style="font-size: 34px;"></ion-icon>
+                        <span class="icon">
+                            <ion-icon name="cloud-done-outline" style="font-size: 44px;" class="mt-2"></ion-icon>
                         </span>
-                        <span class="title mt-3 ml-2">E-Document</span>
+                        <span class="title ml-2">E-Document</span>
                     </a>
                 </li>
 
@@ -35,6 +36,16 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
+
+                <li class="my-6">
+                    <a href="upload.html">
+                        <span class="icon">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </span>
+                        <span class="title">Document</span>
+                    </a>
+                </li>
+
 
                 <li class="my-6 hovered">
                     <a href="data.html">
@@ -63,30 +74,28 @@
                     </a>
                 </li>
 
-                <li class="my-6">
-                    <a href="upload.html">
-                        <span class="icon">
-                            <ion-icon name="cloud-done-outline"></ion-icon>
-                        </span>
-                        <span class="title">Cloud Document</span>
-                    </a>
-                </li>
-
             </ul>
         </div>
 
         <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
-                <div class="toggle">
+                <div class="toggle" data-tooltip-target="tooltip-Menu" type="button">
                     <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                 <div id="tooltip-Menu" role="tooltip"
+                    class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                    Menu
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+
                 </div>
 
                 <div class="user" id="dropdownDefault" data-dropdown-toggle="dropdown">
                     <img src="assets/imgs/customer03.jpg" alt="">
                 </div>
 
-                <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow"
+                <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow" 
                     data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
                     style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 509px);">
                     <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownDefault">
@@ -102,7 +111,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
 
             <!-- ======================= Cards ================== -->
@@ -168,14 +176,16 @@
                     </div>
                     <button type="submit"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-                </form>
+
             </div>
-
-
+            </form>
         </div>
 
 
-        <!-- ================ Order Details List ================= -->
+    </div>
+
+
+    <!-- ================ Order Details List ================= -->
 
     </div>
     </div>
